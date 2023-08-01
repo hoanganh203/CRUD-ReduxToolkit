@@ -1,0 +1,10 @@
+.input {
+    width: 400px !important;
+    border: none;
+    padding: 10px;
+  }
+
+  .header{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
