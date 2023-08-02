@@ -54,7 +54,7 @@ function LayoutUser() {
                                 type="text"
                                 id="Search"
                                 placeholder="Search for..."
-                                className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm border border-gray-300 h-8"
+                                className="w-full rounded-md  py-2.5 pe-10 shadow-sm sm:text-sm border border-gray-300 h-8"
                             />
 
                             <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
