@@ -1,18 +1,13 @@
 import './App.css'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import LayOutAdmin from './Admin/LayoutAdmin/LayOutAdmin'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routers'
 
 function App() {
-  return (
-    <>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/admin' element={<LayOutAdmin />} />
-      </Routes>
-    </>
-  )
+  return <div>
+    <RouterProvider router={router} />
+  </div>
+
 }
 
 export default App
