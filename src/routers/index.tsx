@@ -4,6 +4,9 @@ import { createBrowserRouter, Outlet } from "react-router-dom"
 import Home from "../pages/Home"
 import Cart from "../pages/cart"
 import Admin from "../pages/Admin"
+import { ListProduct } from "../pages/listProduct"
+import { AddProduct } from "../pages/addProduct"
+import { UpdateProduct } from "../pages/updateProduct"
 
 
 
@@ -19,12 +22,13 @@ export const router = createBrowserRouter([
     {
         path: "/admin",
         element: (
-            <div>
-                <Outlet />
-            </div>
+            <Admin />
         ),
         children: [
-            { index: true, element: <Admin /> },
+            { index: true, element: <ListProduct /> },
+            { path: 'add', element: <AddProduct /> },
+            { path: 'update', element: <UpdateProduct /> }
+
         ],
     },
     { path: "*", element: "Not Found Page" },
