@@ -29,14 +29,14 @@ const LayOutAdmin = () => {
                   ></path>
                 </svg>
               </button>
-              <a href="https://flowbite.com" className="flex ml-2 md:mr-24">
+              <a href="/admin" className="flex ml-2 md:mr-24">
                 <img
-                  src="https://flowbite.com/docs/images/logo.svg"
+                  src="https://iweb.tatthanh.com.vn/pic/3/blog/images/logo-shop-dien-thoai-7.jpg"
                   className="h-8 mr-3"
                   alt="FlowBite Logo"
                 />
                 <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                  Flowbite
+                  Admin
                 </span>
               </a>
             </div>
