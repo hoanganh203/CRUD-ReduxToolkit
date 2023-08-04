@@ -1,17 +1,24 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "json-server",
-      "price": 100
+      "name": "sản phẩm Mới 1111",
+      "file": {},
+      "price": "293863",
+      "id": 4
     },
     {
-      "name": "product 31",
-      "price": "100",
-      "id": 2
+      "name": "sản phẩm Mới",
+      "file": {},
+      "price": "293863",
+      "id": 5
     },
     {
-      "id": 3
+      "name": "sản phẩm Mới",
+      "file": {
+        "0": {}
+      },
+      "price": "293863",
+      "id": 6
     }
   ]
 }

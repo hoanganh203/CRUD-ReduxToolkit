@@ -52,7 +52,7 @@ export const ListProduct = () => {
                                     </td>
                                     <td className="px-6 py-4">
                                         <button onClick={() => remove(item.id)} className="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</button>
-                                        <Link to="update" className="font-medium text-blue-600 ml-4 dark:text-red-500 hover:underline">Update</Link>
+                                        <Link to={`update/${item.id}`} className="font-medium text-blue-600 ml-4 dark:text-red-500 hover:underline">Update</Link>
 
                                     </td>
                                 </tr>
