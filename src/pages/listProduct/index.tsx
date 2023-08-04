@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom"
+import { useGetProductsQuery, useRemoveProductMutation } from "../../queryApi";
+import { IProduct } from "../../interfaces/product";
 
 export const ListProduct = () => {
+    const [removeProduct] = useRemoveProductMutation();
+    const { data } = useGetProductsQuery();
+    // const remove = (id: number | string) => {
+    //     removeProduct(id);
+    // }
+    const remove = async (id: any) => {
+        const res = await removeProduct(id);
+        alert("Bạn đã xóa thành công");
+    }
     return (
         <div>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-20">
@@ -26,23 +37,28 @@ export const ListProduct = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <td className="w-32 p-4">
-                                <img src="/docs/images/products/apple-watch.png" alt="Apple Watch" />
-                            </td>
-                            <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-                                Apple Watch
-                            </td>
+                        {data?.map((item: IProduct) => {
+                            return (
+                                <tr key={item.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td className="w-32 p-4">
+                                        <img src="https://cdn.tgdd.vn/Products/Images/42/289700/iphone-14-pro-max-den-thumb-600x600.jpg" alt="Apple Watch" />
+                                    </td>
+                                    <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                        {item.name}
+                                    </td>
 
-                            <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-                                $599
-                            </td>
-                            <td className="px-6 py-4">
-                                <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
-                                <Link to="update" className="font-medium text-blue-600 ml-4 dark:text-red-500 hover:underline">Update</Link>
+                                    <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                        ${item.price}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <button onClick={() => remove(item.id)} className="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</button>
+                                        <Link to="update" className="font-medium text-blue-600 ml-4 dark:text-red-500 hover:underline">Update</Link>
 
-                            </td>
-                        </tr>
+                                    </td>
+                                </tr>
+                            )
+                        })}
+
                     </tbody>
                 </table>
             </div>
