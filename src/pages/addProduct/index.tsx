@@ -1,4 +1,12 @@
+import { useAddProductMutation } from "../../queryApi"
+import { useForm } from "react-hook-form";
 export const AddProduct = () => {
+    const { register, handleSubmit } = useForm();
+    const [addProduct] = useAddProductMutation();
+
+    const onfinish = (values: any) => {
+        addProduct(values);
+    }
     return (
         <>
 
@@ -24,14 +32,15 @@ export const AddProduct = () => {
                         </div>
 
                         <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                            <form action="" className="space-y-4">
+                            <form action="" className="space-y-4" onSubmit={handleSubmit(onfinish)}>
                                 <div>
-                                    <label className="sr-only" >Name</label>
+                                    <label className="sr-only">Name</label>
                                     <input
                                         className="w-full rounded-lg border-gray-200 p-3 text-sm"
                                         placeholder="Name"
                                         type="text"
-                                        id="name"
+
+                                        {...register("name")}
                                     />
                                 </div>
 
@@ -42,9 +51,10 @@ export const AddProduct = () => {
                                             className="w-full rounded-lg border-gray-200 p-3 text-sm"
                                             placeholder="Images..."
                                             type="file"
-                                            id="email"
+                                            {...register("file")}
                                         />
                                     </div>
+
 
                                     <div>
                                         <label className="sr-only" >Phone</label>
@@ -52,23 +62,10 @@ export const AddProduct = () => {
                                             className="w-full rounded-lg border-gray-200 p-3 text-sm"
                                             placeholder="Price..."
                                             type="number"
-                                            id="phone"
+                                            {...register("price")}
                                         />
                                     </div>
                                 </div>
-
-
-                                <div>
-                                    <label className="sr-only" >Message</label>
-
-                                    <textarea
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                        placeholder="Description..."
-
-                                        id="message"
-                                    ></textarea>
-                                </div>
-
                                 <div className="mt-4">
                                     <button
                                         type="submit"
