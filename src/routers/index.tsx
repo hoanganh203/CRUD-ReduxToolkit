@@ -1,13 +1,10 @@
-
-
 import { createBrowserRouter, Outlet } from "react-router-dom"
 import Home from "../pages/Home"
 import Cart from "../pages/cart"
 import Admin from "../pages/Admin"
-import { ListProduct } from "../pages/listProduct"
-import { AddProduct } from "../pages/addProduct"
-import { UpdateProduct } from "../pages/updateProduct"
-
+import ListProduct from "../component/ListProduct"
+import UpdateProduct from "../component/UpdateProduct"
+import AddProduct from "../component/Addproduct"
 
 
 export const router = createBrowserRouter([

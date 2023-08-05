@@ -1,42 +1,41 @@
 {
   "products": [
     {
-      "name": "sản phẩm đẹp",
-      "file": {},
-      "price": 2000000,
-      "id": 4
+      "id": 1,
+      "name": "iPhone 14 Pro Max",
+      "price": "35999000",
+      "describe": "iPhone 14 (Plus/Pro/Pro Max) | Giá tốt, ưu đãi khủng 08/2023",
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691245218/olizujxahuhxvrwz6hv2.webp"
     },
     {
-      "name": "sản phẩm Mới",
-      "file": {},
-      "price": "293863",
-      "id": 5
-    },
-    {
-      "name": "sản phẩm Mới",
+      "name": "Iphone 14 update",
       "file": {
         "0": {}
       },
-      "price": "293863",
-      "id": 6
+      "price": "1233333333",
+      "describe": "iPhone 14 (Plus/Pro/Pro Max) | Giá tốt, ưu đãi khủng 08/2023",
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691248595/ilfvrv9oljp9cnbfwsyt.webp",
+      "id": 2
     },
     {
-      "name": "2345ui",
-      "file": {},
-      "price": "",
-      "id": 7
+      "name": "PhoneStore FPOLY",
+      "file": {
+        "0": {}
+      },
+      "price": "123123123",
+      "describe": "1231312",
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691249373/vffl73ng4f3ic3pntddh.jpg",
+      "id": 4
     },
     {
-      "name": "2345ui",
-      "file": {},
-      "price": "567890",
-      "id": 8
-    },
-    {
-      "name": "73580",
-      "file": {},
-      "price": "567890",
-      "id": 9
+      "name": "PhoneStore FPOLYupdate",
+      "file": {
+        "0": {}
+      },
+      "price": "12313",
+      "describe": "iPhone 14 (Plus/Pro/Pro Max) | Giá tốt, ưu đãi khủng 08/2023",
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691250217/vejoynvnxjg2prshghk4.jpg",
+      "id": 5
     }
   ]
 }

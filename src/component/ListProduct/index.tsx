@@ -1,16 +1,30 @@
-import { Link } from "react-router-dom"
-import { useGetProductsQuery, useRemoveProductMutation } from "../../queryApi";
+import { Link } from "react-router-dom";
 import { IProduct } from "../../interfaces/product";
-
-export const ListProduct = () => {
+import { useGetProductsQuery, useRemoveProductMutation } from "../../queryApi";
+import Swal from "sweetalert2"
+const ListProduct = () => {
     const [removeProduct] = useRemoveProductMutation();
     const { data } = useGetProductsQuery();
-    // const remove = (id: number | string) => {
-    //     removeProduct(id);
-    // }
+
     const remove = async (id: any) => {
-        const res = await removeProduct(id);
-        alert("Bạn đã xóa thành công");
+        Swal.fire({
+            title: 'Delete?',
+            text: "Bạn chắc là muốn xóa chứ!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Đăng xuất'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                removeProduct(id);
+                Swal.fire(
+                    'Xóa',
+                    'Thành công',
+                    'success'
+                )
+            }
+        })
     }
     return (
         <div>
@@ -41,7 +55,7 @@ export const ListProduct = () => {
                             return (
                                 <tr key={item.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <td className="w-32 p-4">
-                                        <img src="https://cdn.tgdd.vn/Products/Images/42/289700/iphone-14-pro-max-den-thumb-600x600.jpg" alt="Apple Watch" />
+                                        <img src={item?.images} alt="Apple Watch" />
                                     </td>
                                     <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                                         {item.name}
@@ -66,3 +80,5 @@ export const ListProduct = () => {
         </div>
     )
 }
+
+export default ListProduct
