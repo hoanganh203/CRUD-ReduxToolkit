@@ -1,4 +1,3 @@
-import React from 'react'
 import './ListProductsHome.css'
 import { useGetProductsQuery } from '../../queryApi';
 
@@ -17,7 +16,7 @@ const ListProductsHome = () => {
                             <a href="#">
                                 <img
                                     className="img_layout p-8 rounded-t-lg"
-                                    src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/11/2/1112224/Iphone-14.jpg"
+                                    src={item?.images}
                                     alt="product image"
                                 />
                             </a>
@@ -79,7 +78,7 @@ const ListProductsHome = () => {
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                                    {Number(item.price).toLocaleString("vi-VN", { minimumFractionDigits: 0 })}
+                                        {Number(item.price).toLocaleString("vi-VN", { minimumFractionDigits: 0 })}
                                     </span>
                                     <a
                                         href="#"

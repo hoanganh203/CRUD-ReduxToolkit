@@ -32,7 +32,6 @@ const UpdateProduct = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        // Upload ảnh lên Cloudinary
         await updateProduct({ ...data, ...product }).unwrap().then(async () => {
             return Notifications("success", "Update sản phẩm thành công"),
                 navigate("/admin")
