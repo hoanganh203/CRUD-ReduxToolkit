@@ -1,6 +1,11 @@
 import { RiDeleteBinLine } from "react-icons/ri"
 import { AiOutlineMinus } from "react-icons/ai"
 import { GrFormAdd } from "react-icons/gr"
+import { useSelector } from "react-redux"
+import { RootState } from "../../store"
+import { useAppDispatch } from "../../app/store"
+import { deCrement, deleteCarts, inCrement } from "../../sliceRedux/cart"
+import Swal from "sweetalert2"
 
 
 
