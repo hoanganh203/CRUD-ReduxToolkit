@@ -52,6 +52,16 @@
       "describe": "dsasss",
       "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691284254/tu1abyxgwvzvamcnkwwg.png",
       "id": 9
+    },
+    {
+      "name": "Samsung Galaxy",
+      "file": {
+        "0": {}
+      },
+      "price": "5000",
+      "describe": "dsdsdsd",
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691298108/jxue0dduqgc7x1qpbpob.png",
+      "id": 10
     }
   ]
 }

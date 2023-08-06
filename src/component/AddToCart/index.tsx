@@ -89,7 +89,6 @@ const AddToCart = () => {
                                     </td>
                                 </tr>
                             })}
-
                         </tbody>
                     </table>
                 </div>

@@ -36,7 +36,7 @@ const ListProductsHome = () => {
 
                         <div className="test flex-wrap w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" key={index}>
 
-                            <a href="#">
+                            <a href="detail/:id">
                                 <img
                                     className="img_layout p-8 rounded-t-lg"
                                     src={item?.images}
