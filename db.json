@@ -3,16 +3,16 @@
     {
       "id": 1,
       "name": "iPhone 14 Pro Max",
-      "price": "35999000",
+      "price": 35999034,
       "describe": "iPhone 14 (Plus/Pro/Pro Max) | Giá tốt, ưu đãi khủng 08/2023",
-      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691245218/olizujxahuhxvrwz6hv2.webp"
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691282601/ppjqd1yzj4wl1j677tut.png"
     },
     {
       "name": "Iphone 14 update",
       "file": {
         "0": {}
       },
-      "price": "1233333333",
+      "price": 12333,
       "describe": "iPhone 14 (Plus/Pro/Pro Max) | Giá tốt, ưu đãi khủng 08/2023",
       "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691248595/ilfvrv9oljp9cnbfwsyt.webp",
       "id": 2
@@ -36,6 +36,52 @@
       "describe": "iPhone 14 (Plus/Pro/Pro Max) | Giá tốt, ưu đãi khủng 08/2023",
       "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691250217/vejoynvnxjg2prshghk4.jpg",
       "id": 5
+    },
+    {
+      "name": "Samsung Galaxy",
+      "file": {
+        "0": {}
+      },
+      "price": "5000",
+      "describe": "aeewwq",
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691282697/tdkyitttw8jbttrmss98.png",
+      "id": 6
+    },
+    {
+      "name": "Samsung Galaxy",
+      "files": {
+        "0": {}
+      },
+      "price": "5000",
+      "describe": "sdfsd",
+      "file": {
+        "0": {}
+      },
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691283801/ysd9tmiluorkkevwnlqw.png",
+      "id": 7
+    },
+    {
+      "name": "Samsung Galaxy",
+      "files": {
+        "0": {}
+      },
+      "price": "5000",
+      "describe": "sdfsd",
+      "file": {
+        "0": {}
+      },
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691283802/hnvkcehypmftpxzc0pjg.png",
+      "id": 8
+    },
+    {
+      "name": "Samsung Galaxy",
+      "file": {
+        "0": {}
+      },
+      "price": "-1",
+      "describe": "dsasss",
+      "images": "https://res.cloudinary.com/doa7mkkpq/image/upload/v1691284254/tu1abyxgwvzvamcnkwwg.png",
+      "id": 9
     }
   ]
 }

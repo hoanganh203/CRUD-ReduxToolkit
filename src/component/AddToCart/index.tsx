@@ -1,9 +1,6 @@
 import { RiDeleteBinLine } from "react-icons/ri"
 import { AiOutlineMinus } from "react-icons/ai"
 import { GrFormAdd } from "react-icons/gr"
-
-
-
 const AddToCart = () => {
     return (
         <div className="mb-40">
