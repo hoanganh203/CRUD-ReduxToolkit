@@ -18,3 +18,4 @@ const Notifications = (icons: any, title: string) => {
     })
 }
 export default Notifications
+
