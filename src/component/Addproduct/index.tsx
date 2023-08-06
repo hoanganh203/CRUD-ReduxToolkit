@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Upload from "../upload";
 
 const AddProduct = () => {
-    const { register, handleSubmit , formState: { errors} } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const [addProduct, { isLoading: isAddproduct }] = useAddProductMutation();
     const navigate = useNavigate()
 
@@ -28,11 +28,11 @@ const AddProduct = () => {
     }
     return (
         <>
-            <section className="bg-gray-100">
+            <section className="bg-white">
                 <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
                     <h1 className="font-bold text-center text-2xl my-2">Thêm sản phẩm</h1>
                     <div className="flex items-center justify-center gap-x-16 gap-y-8 lg:grid-cols-5">
-                        <div className="rounded-lg bg-stone-300 p-8 shadow-lg lg:col-span-3 lg:p-12 ">
+                        <div className="rounded-lg bg-thite p-8 shadow-lg lg:col-span-3 lg:p-12 ">
                             <form className="space-y-4 " onSubmit={handleSubmit(onfinish)}>
                                 <div>
                                     <label className="">Tên sản phẩm </label>
@@ -40,8 +40,8 @@ const AddProduct = () => {
                                         className="w-full rounded-lg border-gray-200 p-3 text-sm"
                                         placeholder="Name"
                                         type="text"
-                                        {...register("name",{ required: true })}
-                                        
+                                        {...register("name", { required: true })}
+
                                     />
                                     {errors.name && <span className="text-red-600">Tên sản phẩm không được để trống </span>}
                                 </div>
@@ -53,9 +53,9 @@ const AddProduct = () => {
                                             className="w-full rounded-lg border-gray-200 p-3 text-sm"
                                             placeholder="Images..."
                                             type="file"
-                                            {...register("file",{required : true})}
+                                            {...register("file", { required: true })}
                                         />
-                                        {errors.file  && <span className="text-red-600">Ảnh không được để trống </span>}
+                                        {errors.file && <span className="text-red-600">Ảnh không được để trống </span>}
                                     </div>
 
                                     <div>
@@ -64,24 +64,24 @@ const AddProduct = () => {
                                             className="w-full rounded-lg border-gray-200 p-3 text-sm"
                                             placeholder="Price..."
                                             type="number"
-                                            {...register("price",{required : true , maxLength : 10})}
+                                            {...register("price", { required: true, maxLength: 10 })}
                                         />
                                         {errors?.price?.type === "required" && <p className="text-red-600">price  không được để  trông</p>}
-                                    {errors?.price?.type === "maxLength" && (
-                                        <p className="text-red-600">price không được để quá 10 số </p>
-                                    )} 
+                                        {errors?.price?.type === "maxLength" && (
+                                            <p className="text-red-600">price không được để quá 10 số </p>
+                                        )}
                                     </div>
                                 </div>
                                 <div>
                                     <label className="">Describe</label>
                                     <br />
-                                    <textarea className="h-20 w-[100%] rounded-lg border-gray-200" {...register("describe", {required : true, maxLength: 20 }) }>   
+                                    <textarea className="h-20 w-[100%] rounded-lg border-gray-200" {...register("describe", { required: true, maxLength: 20 })}>
                                     </textarea>
                                     <br />
                                     {errors?.describe?.type === "required" && <p className="text-red-600">describe  không được để  trông</p>}
                                     {errors?.describe?.type === "maxLength" && (
                                         <p className="text-red-600">Describe không được để quá 20 kí tự</p>
-                                    )}    
+                                    )}
                                 </div>
                                 <div className="mt-4">
                                     <a href="/admin" className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto hover:bg-white hover:text-black">Back</a>
