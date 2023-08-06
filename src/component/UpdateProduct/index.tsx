@@ -4,8 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useGetProductsByIdQuery, useUpdateProductsMutation } from "../../queryApi";
 import { useEffect, useState } from "react";
 import { IProduct } from "../../interfaces/product";
-import Notifications from "../Notifications";
 import Upload from "../upload";
+import Notifications from "../Notifications";
 
 const UpdateProduct = () => {
     const { id } = useParams<{ id: string }>();
@@ -32,7 +32,6 @@ const UpdateProduct = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        // Upload ảnh lên Cloudinary
         await updateProduct({ ...data, ...product }).unwrap().then(async () => {
             return Notifications("success", "Update sản phẩm thành công"),
                 navigate("/admin")

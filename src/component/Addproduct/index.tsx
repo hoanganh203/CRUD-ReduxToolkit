@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { AiOutlineLoading } from "react-icons/ai"
 import { useAddProductMutation } from "../../queryApi";
 import { IProduct } from "../../interfaces/product";
-import axios from "axios"
 import Notifications from "../Notifications";
 import { useNavigate } from "react-router-dom";
 import Upload from "../upload";

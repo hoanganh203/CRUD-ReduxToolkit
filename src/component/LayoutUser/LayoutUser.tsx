@@ -1,6 +1,39 @@
+import { Link } from "react-router-dom";
 import "./LayoutUser.css"
+import { AiOutlineShoppingCart } from "react-icons/ai"
+import { RootState } from "../../store";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useAppDispatch } from "../../app/store";
+import Swal from "sweetalert2";
+import { deleteCarts } from "../../sliceRedux/cart";
+import { RiDeleteBinLine } from "react-icons/ri"
+import { GiCancel } from "react-icons/gi"
 
 function LayoutUser() {
+    const { carts } = useSelector((state: RootState) => state.cart)
+    const [isCart, setIsCart] = useState<boolean>(false)
+    const dispatch = useAppDispatch()
+    const deleteCart = (item: any) => {
+        Swal.fire({
+            title: 'Delete?',
+            text: "Bạn chắc là muốn xóa chứ!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Đăng xuất'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                dispatch(deleteCarts(item))
+                Swal.fire(
+                    'Xóa',
+                    'Thành công',
+                    'success'
+                )
+            }
+        })
+    }
     return (
         <header className=" header  bg-white">
             <div className=" flex  max-w-screen-2xl items-center gap-8 px-4 sm:px-6 lg:px-8">
@@ -117,11 +150,57 @@ function LayoutUser() {
                                 />
                             </svg>
                         </button>
+
+                        <div>
+                            {isCart ? <button className="relative mx-2 px-4 py-3 bg-teal-600 rounded-3xl hover:bg-white hover:text-green-500 text-white flex items-center justify-center" onClick={() => setIsCart(!isCart)}><GiCancel />
+                                <span className="mx-1 px-3 py-1 rounded-full bg-red-500">{carts.length}</span>
+                            </button> : <button className="relative mx-5 px-4 py-3 bg-teal-600 rounded-3xl hover:bg-white hover:text-green-500 text-white flex items-center justify-center" onClick={() => setIsCart(!isCart)}><AiOutlineShoppingCart />
+                                <span className="mx-1 px-3 py-1 rounded-full bg-red-500">{carts.length}</span>
+                            </button>}
+
+                            {
+                                isCart && <div className=" absolute bg-slate-100 shadow-3xl w-72 h-auto right-20 rounded-xl">
+                                    {carts.length !== 0 ? <>
+                                        {carts.map((item: any, index: any) => {
+                                            return <span key={index}>
+                                                <hr />
+                                                <div className="flex items-center justify-center mt-2">
+                                                    < p > <img className="w-10 h-10" src={item.images} alt="" /></p>
+                                                    <p className="mx-2">{item.name}</p>
+
+                                                </div>
+                                                <td className="px-3 py-2 float-right bg-red-600 rounded-full text-white hover:bg-white hover:text-red-600">
+                                                    <button onClick={() => deleteCart(item)}><RiDeleteBinLine /></button>
+                                                </td>
+                                                <p className="mx-5">Giá: {Number(item.price).toLocaleString("vi-VN", { minimumFractionDigits: 0 })} VNĐ</p>
+                                                <p className="mx-5">Số lượng :{item.quanlity}</p>
+
+                                            </span>
+                                        })}
+                                        <hr />
+                                        <div className="flex items-center justify-center">
+                                            <button className="px-2 py-1 bg-slate-400 text-sm rounded-3xl hover:text-slate-400 hover:bg-white" onClick={() => setIsCart(false)}> Cancel</button>
+                                            <Link to="/cart"><p className="text-center my-2 mx-1 text-sm underline bg-blue-100 px-2 py-1 rounded-3xl hover:text-blue-300 hover:bg-white">Xem chi tiết</p></Link>
+                                            <Link to="#"><p className="text-center my-2 text-sm underline bg-red-100 px-2 py-1 rounded-3xl hover:text-red-300 hover:bg-white">Thanh toán</p></Link>
+                                        </div>
+                                    </> : <>
+                                        <h1 className="text-center underline">Giỏ hàng rỗng</h1>
+                                    </>}
+
+
+                                </div>
+                            }
+
+                        </div>
+
+
+
                     </div>
-                </div>
-            </div>
-        </header>
+                </div >
+            </div >
+        </header >
     );
 }
+
 
 export default LayoutUser;

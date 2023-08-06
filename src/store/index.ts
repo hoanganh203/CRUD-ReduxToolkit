@@ -12,6 +12,7 @@ import {
 
 import storage from 'redux-persist/lib/storage';
 import productApi, { productReducer } from '../queryApi';
+import { cartsReducer } from '../sliceRedux/cart';
 
 const persistConfig = {
     key: 'root',
@@ -20,7 +21,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    [productApi.reducerPath]: productReducer
+    [productApi.reducerPath]: productReducer,
+    cart: cartsReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
