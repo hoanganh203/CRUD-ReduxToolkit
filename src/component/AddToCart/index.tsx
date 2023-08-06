@@ -1,8 +1,6 @@
 import { RiDeleteBinLine } from "react-icons/ri"
 import { AiOutlineMinus } from "react-icons/ai"
 import { GrFormAdd } from "react-icons/gr"
-<<<<<<< HEAD
-=======
 import { useSelector } from "react-redux"
 import { RootState } from "../../store"
 import { useAppDispatch } from "../../app/store"
@@ -11,7 +9,6 @@ import Swal from "sweetalert2"
 
 
 
->>>>>>> 7ef98d183c49528407297b0c600a254e5ae49b50
 const AddToCart = () => {
     const { carts } = useSelector((state: RootState) => state.cart)
     const dispatch = useAppDispatch()

@@ -33,12 +33,16 @@ const ListProductsHome = () => {
             <div className="card_layout ">
                 {data?.map((item: any, index: any) => {
                     return (
-                        <div className="flex-wrap w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" key={index}>
+
+                        <div className="test flex-wrap w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" key={index}>
+
                             <a href="#">
                                 <img
                                     className="img_layout p-8 rounded-t-lg"
                                     src={item?.images}
-                                    alt="product image"
+
+                                    alt={item.name}
+
                                 />
                             </a>
                             <div className="px-5 pb-5">
