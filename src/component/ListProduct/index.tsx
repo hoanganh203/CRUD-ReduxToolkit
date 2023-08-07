@@ -14,7 +14,7 @@ const ListProduct = () => {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Đăng xuất'
+            confirmButtonText: 'Xóa'
         }).then((result) => {
             if (result.isConfirmed) {
                 removeProduct(id);
@@ -41,6 +41,9 @@ const ListProduct = () => {
                             <th scope="col" className="px-6 py-3">
                                 Product
                             </th>
+                            <th scope="col" className="px-6 py-3">
+                                stock
+                            </th>
 
                             <th scope="col" className="px-6 py-3">
                                 Price
@@ -62,7 +65,10 @@ const ListProduct = () => {
                                     </td>
 
                                     <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-                                        ${item.price}
+                                        {item.stock}
+                                    </td>
+                                    <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                        {Number(item.price).toLocaleString("vi-VN", { minimumFractionDigits: 0 })} VNĐ
                                     </td>
                                     <td className="px-6 py-4">
                                         <button onClick={() => remove(item.id)} className="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</button>

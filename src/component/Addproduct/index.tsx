@@ -10,7 +10,6 @@ const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [addProduct, { isLoading: isAddproduct }] = useAddProductMutation();
     const navigate = useNavigate()
-
     const onfinish = async (data: IProduct) => {
         try {
             Upload(data.file[0]).then((dataImg) => {
@@ -57,7 +56,6 @@ const AddProduct = () => {
                                         />
                                         {errors.file && <span className="text-red-600">Ảnh không được để trống </span>}
                                     </div>
-
                                     <div>
                                         <label className="" >Giá sản phẩm </label>
                                         <input
@@ -71,6 +69,19 @@ const AddProduct = () => {
                                             <p className="text-red-600">price không được để quá 10 số </p>
                                         )}
                                     </div>
+                                </div>
+                                <div>
+                                    <label className="" >Số lượng </label>
+                                    <input
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        placeholder="stock..."
+                                        type="number"
+                                        {...register("stock", { required: true, maxLength: 10 })}
+                                    />
+                                    {errors?.stock?.type === "required" && <p className="text-red-600">stock  không được để  trông</p>}
+                                    {errors?.stock?.type === "maxLength" && (
+                                        <p className="text-red-600">stock không được để quá 10 số </p>
+                                    )}
                                 </div>
                                 <div>
                                     <label className="">Describe</label>

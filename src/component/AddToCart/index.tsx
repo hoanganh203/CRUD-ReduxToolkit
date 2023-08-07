@@ -6,11 +6,16 @@ import { RootState } from "../../store"
 import { useAppDispatch } from "../../app/store"
 import { deCrement, deleteCarts, inCrement } from "../../sliceRedux/cart"
 import Swal from "sweetalert2"
+import { useEffect, useState } from "react"
+import { IProduct } from "../../interfaces/product"
+import { addToOrder } from "../../sliceRedux/order"
+import { useNavigate } from "react-router-dom"
 
 
 
 const AddToCart = () => {
-    const { carts } = useSelector((state: RootState) => state.cart)
+    const navigate = useNavigate()
+    const { carts } = useSelector((state: RootState) => state.carts)
     const dispatch = useAppDispatch()
     const deleteCart = (item: any) => {
         Swal.fire({
@@ -20,7 +25,7 @@ const AddToCart = () => {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Đăng xuất'
+            confirmButtonText: 'Xóa'
         }).then((result) => {
             if (result.isConfirmed) {
                 dispatch(deleteCarts(item))
@@ -32,6 +37,26 @@ const AddToCart = () => {
             }
         })
     }
+    const [total, setTotal] = useState<number>(0)
+
+    useEffect(() => {
+        if (carts.length === 0) {
+            return
+        }
+        setTotal(
+            carts.reduce(
+                (accumulator: any, currentValue: any) =>
+                    accumulator + currentValue.quanlity * currentValue.price, 0
+            )
+        )
+
+    }, [carts])
+
+    const onHandleOder = async (carts: IProduct) => {
+        dispatch(addToOrder(carts))
+        navigate("/order")
+    }
+
     return (
         <div className="mb-40">
             <div className="flex py-4 px-5">
@@ -96,7 +121,10 @@ const AddToCart = () => {
             </> : <>
                 <h1 className="text-center text-2xl">Giỏ hàng rồng <a href="/" className="text-blue-500 underline">Mua hàng tại đây ...</a></h1>
             </>}
-            {/* <h2 className="text-center py-2">Tổng tiền :  {Number(total).toLocaleString("vi-VN", { minimumFractionDigits: 0 })} VNĐ</h2> */}
+            <div className="flex items-center justify-center">
+                <h2 className="text-center py-2">Tổng tiền :  {Number(total).toLocaleString("vi-VN", { minimumFractionDigits: 0 })} VNĐ</h2>
+                <button className="px-4 py-2 bg-red-800 rounded-2xl text-white ml-5 my-4 cursor-pointer hover:bg-white hover:text-red-500" onClick={() => onHandleOder(carts)}>Đặt hàng</button>
+            </div>
         </div>
     )
 }

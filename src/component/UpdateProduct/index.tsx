@@ -15,7 +15,8 @@ const UpdateProduct = () => {
         name: '',
         price: 0,
         images: "",
-        describe: ""
+        describe: "",
+        stock: 0
     });
     const [updateProduct, { isLoading: isUpdateproduct }] = useUpdateProductsMutation();
     useEffect(() => {
@@ -85,6 +86,21 @@ const UpdateProduct = () => {
                                             }
                                         />
                                     </div>
+                                </div>
+                                <div>
+                                    <label className="sr-only">stock</label>
+                                    <input
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        placeholder="stcok"
+                                        type="number"
+                                        value={product.stock || ''}
+                                        onChange={(event) =>
+                                            setProduct({
+                                                ...product,
+                                                stock: Number(event.target.value),
+                                            })
+                                        }
+                                    />
                                 </div>
 
                                 <div>

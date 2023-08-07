@@ -11,7 +11,7 @@ import { RiDeleteBinLine } from "react-icons/ri"
 import { GiCancel } from "react-icons/gi"
 
 function LayoutUser() {
-    const { carts } = useSelector((state: RootState) => state.cart)
+    const { carts } = useSelector((state: RootState) => state.carts)
     const [isCart, setIsCart] = useState<boolean>(false)
     const dispatch = useAppDispatch()
     const deleteCart = (item: any) => {

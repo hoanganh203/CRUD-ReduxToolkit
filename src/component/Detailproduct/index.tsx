@@ -46,9 +46,7 @@ const DetailProuct = () => {
                                                 </div>
                                                 <div className="lg:flex justify-end">
                                                       <button className='w-100% p-4 bg-teal-300 mx-18  rounded' onClick={() => addToCarts(product)}><AiOutlineShoppingCart /></button>
-
                                                 </div>
-
                                           </div>
                                           <h5 className='py-4'>Điểm nổi bật chính </h5>
                                           <div className="grid grid-cols-1 gap-3 mt-3 md:grid-cols-1">

@@ -4,6 +4,7 @@ export interface IProduct {
     price?: number;
     images?: string,
     describe?: string;
-    file?: any
+    file?: any,
+    stock?: number
 
 }
