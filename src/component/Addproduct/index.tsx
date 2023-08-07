@@ -75,7 +75,7 @@ const AddProduct = () => {
                                 <div>
                                     <label className="">Describe</label>
                                     <br />
-                                    <textarea className="h-20 w-[100%] rounded-lg border-gray-200" {...register("describe", { required: true, maxLength: 20 })}>
+                                    <textarea className="h-20 w-[100%] rounded-lg border-gray-200" {...register("describe", { required: true, maxLength: 500 })}>
                                     </textarea>
                                     <br />
                                     {errors?.describe?.type === "required" && <p className="text-red-600">describe  không được để  trông</p>}
