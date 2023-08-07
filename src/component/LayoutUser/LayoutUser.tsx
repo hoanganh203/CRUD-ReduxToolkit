@@ -22,7 +22,7 @@ function LayoutUser() {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Đăng xuất'
+            confirmButtonText: 'Xóa'
         }).then((result) => {
             if (result.isConfirmed) {
                 dispatch(deleteCarts(item))
